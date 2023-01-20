@@ -1,3 +1,4 @@
+use std::collections::LinkedList;
 pub struct Student{
     pub perm:i32, 
     pub lastName:String,
@@ -48,4 +49,20 @@ impl Student{
         s = s + self.getPerm().to_string().as_str() + ", " + self.getFullName().as_str(); 
         s
     }
+}
+pub fn test_list(list:LinkedList<Student>){
+
+    for element in list.iter(){
+        println!("{}\n", element.toString());
+    }
+    // let s = Student::create(1234567, String::from("Smith"), String::from("Malory Logan")); 
+    // let mut list:LinkedList<Student> = LinkedList::new();
+    // list.push_back(s);
+    // list.push_back(Student::create(2222222, String::from("john"), String::from("Bob Paul")));
+    // for element in list.iter_mut(){
+    //     println!("{}\n", element.toString());
+    // }
+
+
+
 }
