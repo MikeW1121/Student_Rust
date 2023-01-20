@@ -11,13 +11,20 @@ fn test_basics(){
 
 
 }
+fn test_list(){
+    let s = Student::create(1234567, String::from("Smith"), String::from("Malory Logan")); 
+    let mut list:LinkedList<Student> = LinkedList::new();
+    let a = s.clone();
+    let b = Student::copy(a);
+    list.push_back(s);
+    list.push_back(b);
+    list.push_back(Student::create(2222222, String::from("john"), String::from("Bob Paul")));
+    student::print_list(list);
+}
 
 
 
 fn main() {
-    let s = Student::create(1234567, String::from("Smith"), String::from("Malory Logan")); 
-    let mut list:LinkedList<Student> = LinkedList::new();
-    list.push_back(s);
-    list.push_back(Student::create(2222222, String::from("john"), String::from("Bob Paul")));
-    student::test_list(list);
+    test_basics(); 
+    test_list();
 }

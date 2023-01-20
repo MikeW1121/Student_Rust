@@ -1,4 +1,5 @@
 use std::collections::LinkedList;
+#[derive(Clone)]
 pub struct Student{
     pub perm:i32, 
     pub lastName:String,
@@ -36,12 +37,13 @@ impl Student{
     }
 
     pub fn copy(x:Student)-> Student{
-        Student{
-            lastName: x.lastName, 
-            firstAndMiddleName:x.firstAndMiddleName,
-            perm: x.perm,
+        Student::create(x.perm, x.lastName, x.firstAndMiddleName)
+        // Student{
+        //     lastName: (x).lastName, 
+        //     firstAndMiddleName:x.firstAndMiddleName,
+        //     perm: x.perm,
             
-        }
+        // }
 
     }
     pub fn toString(&self) -> String{
@@ -50,19 +52,9 @@ impl Student{
         s
     }
 }
-pub fn test_list(list:LinkedList<Student>){
+pub fn print_list(list:LinkedList<Student>){
 
     for element in list.iter(){
         println!("{}\n", element.toString());
     }
-    // let s = Student::create(1234567, String::from("Smith"), String::from("Malory Logan")); 
-    // let mut list:LinkedList<Student> = LinkedList::new();
-    // list.push_back(s);
-    // list.push_back(Student::create(2222222, String::from("john"), String::from("Bob Paul")));
-    // for element in list.iter_mut(){
-    //     println!("{}\n", element.toString());
-    // }
-
-
-
 }
